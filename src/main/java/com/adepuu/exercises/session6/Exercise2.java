@@ -1,7 +1,9 @@
 package com.adepuu.exercises.session6;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Exercise2 {
@@ -26,9 +28,10 @@ public class Exercise2 {
             while ((line = reader.readLine()) != null) {
                 System.out.println(line);
             }
-        } catch (Exception e) {
-            System.out.println(e.toString());
-            System.out.println("the file is unavailable");
+        } catch (FileNotFoundException e) {
+            System.out.println("the file is unavailable" + e.toString());
+        } catch (IOException e) {
+            System.out.println("IOException error" + e.toString());
         } finally {
             System.out.println("done");
         }

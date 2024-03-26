@@ -20,45 +20,43 @@ public class Exercise1 {
         ArrayList<String> values = new ArrayList<>();
         boolean condition = true;
 
-
         while (condition) {
-            System.out.print("input the number = ");
+            System.out.println("input data = ");
             String numbers = scanner.nextLine();
             if (numbers.equalsIgnoreCase("q")) {
                 break;
             }
             values.add(numbers);
+        }
 
-        } for (String numbersContainer : values) {
-            System.out.println(numbersContainer);
+        for (String container : values) {
+            System.out.println(container);
         }
 
         ArrayList<Integer> numbersOnly = new ArrayList<>();
-
         for (String str : values) {
-            for (char numbersOnly2 : str.toCharArray()){
-                if (Character.isDigit(numbersOnly2)) {
-                    try {
-                        int num = Character.getNumericValue(numbersOnly2);
-                        numbersOnly.add(num);
-                    } catch (NumberFormatException e) {
-                        System.out.println("invalid data " + e.getMessage());
-                    }
+            for (char charNumber : str.toCharArray()) {
+                if (Character.isDigit(charNumber)) {
+                    int num = Character.getNumericValue(charNumber);
+                    numbersOnly.add(num);
                 }
             }
         }
+
         System.out.println("numbers only = ");
-        for (int number : numbersOnly) {
-            System.out.println(number);
+        for (int num : numbersOnly) {
+            System.out.println(num);
         }
-        
+
         int sum = 0;
         for (int num : numbersOnly) {
             sum += num;
         }
-        System.out.println("average is =");
-        Double average = (double) (sum / numbersOnly.size());
+
+        System.out.println("average is = ");
+        double average = (double) sum / numbersOnly.size();
         System.out.println(average);
+
         scanner.close();
     }
 }
