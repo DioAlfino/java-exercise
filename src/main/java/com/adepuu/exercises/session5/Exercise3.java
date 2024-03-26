@@ -17,6 +17,17 @@ public class Exercise3 {
      * Output: true
      */
     public static void main(String[] args) {
+        int[] numbers = {1,2,3,1};
+        boolean check = false;
 
+        for (int i = 0; i <numbers.length; i++){
+            for (int j = i + 1; j < numbers.length; j++ ){
+                if (numbers[i] ==numbers[j]) {
+                    check = true;
+                    break;
+                }
+            }
+        }
+        System.out.println(check);
     }
 }
